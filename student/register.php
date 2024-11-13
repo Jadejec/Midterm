@@ -78,16 +78,16 @@ $students = $_SESSION['students'];
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($students as $student): ?>
+                    <?php foreach ($students as $key => $student): ?>
                         <tr>
                             <td><?php echo htmlspecialchars($student["student_id"]); ?></td>
                             <td><?php echo htmlspecialchars($student["first_name"]); ?></td>
                             <td><?php echo htmlspecialchars($student["last_name"]); ?></td>
                             <td>
                     <div class='d-grid gap-2 d-md-block'>
-                        <a href="./edit.php" class='btn btn-primary'>Edit</a>
+                        <a href="./edit.php?student_key=<?php echo $key; ?>" class='btn btn-primary'>Edit</a>
                        
-                        <button type='button' class='btn btn-danger'>Delete</button>
+                        <a href="./delete.php" class='btn btn-danger'>Delete</a>
                     </div>
                 </td>
                         </tr>
