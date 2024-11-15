@@ -73,6 +73,6 @@ if (isset($_GET['student_key'])) {
         </div>
     </div>
     </div>
-
+    <?php include "../footer.php"; ?>
 </body>
 </html>

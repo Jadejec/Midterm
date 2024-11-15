@@ -16,8 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error_message = "Invalid email format.";
     } else {
         // Hardcoded credentials for demonstration
-        $validEmail = "jade_cordero@email.com";
-        $validPassword = "1234";
+        $validEmail = "user1@email.com";
+        $validPassword = "password";
 
         if ($email === $validEmail && $password === $validPassword) {
             $_SESSION['logged_in'] = true;
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 </div>
-
+<?php include "./footer.php"; ?>
 <!-- JavaScript -->
 <script>
     // Disable the back button to prevent navigation after logout
@@ -83,6 +83,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         history.go(1);
     };
 </script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
