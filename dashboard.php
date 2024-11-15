@@ -40,7 +40,7 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="card-body">
                 <p>Use the button below to add a new subject.</p>
-                <a href="subject.php" class="btn btn-primary"  onclick="return false";>Add Subject</a>
+                <button class="btn btn-primary"  disabled>Add Subject</button>
             </div>
         </div>
 

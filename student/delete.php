@@ -1,36 +1,35 @@
 <?php
 session_start();
 
-// Check if the students array exists in the session
-if (!isset($_SESSION['students'])) {
-    echo "No student data found in the session.";
-    exit();
-}
+
 
 $students = $_SESSION['students'];
+// Check if the students array exists in the session
+$students = isset($_SESSION['students']) ? $_SESSION['students'] : [];
+ // Check if a student key was passed in the URL
+if (isset($_GET['student_key'])) {
+    $student_key = $_GET['student_key'];
 
-// Get the student key from URL and validate it
-if (isset($_GET['key']) && array_key_exists($_GET['key'], $students)) {
-    $key = $_GET['key'];
-    $student = $students[$key];
-}
- else {
-    // Show an error message if the key is invalid
-    echo "Student not found. Please check if the key is valid and try again.";
-    exit();
-}
+    // Check if the student exists in the array
+    if (isset($students[$student_key])) {
+        $student = $students[$student_key];
+    } 
+} 
 
 // If the form is submitted to delete the student
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
     // Remove student from the array
-    unset($students[$key]);
-    $_SESSION['students'] = $students; // Update session
+    unset($students[$student_key]);
+
+    // Update the session with the modified students array
+    $_SESSION['students'] = array_values($students); // Re-index array
 
     // Redirect back to register.php after deletion
     header("Location: register.php");
     exit();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
