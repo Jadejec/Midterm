@@ -52,14 +52,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     
 <div class="login-container">
-    <div class="card">
-        <div class="card-body">
-            <h3 class="card-title text-center">Login</h3>
-            <?php if ($error_message): ?>
+<?php if ($error_message): ?>
                 <div class="alert alert-danger">
                     <?php echo $error_message; ?>
                 </div>
             <?php endif; ?>
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title text-center">Login</h3>
             <form method="POST" action="">
                 <div class="form-group">
                     <label for="email">Email address</label>
