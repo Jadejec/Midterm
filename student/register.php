@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class='d-grid gap-2 d-md-block'>
                         <a href="./edit.php?student_key=<?php echo $key; ?>" class='btn btn-primary'>Edit</a>
                        
-                        <a href="./delete.php" class='btn btn-danger'>Delete</a>
+                        <a href="./delete.php?student_key=<?php echo $key; ?>" class='btn btn-danger'>Delete</a>
                     </div>
                 </td>
                         </tr>
