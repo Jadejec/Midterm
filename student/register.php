@@ -1,4 +1,5 @@
 <?php
+include '../header.php';
 session_start();
 
 // Check if the students array is set in the session
@@ -54,7 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <div class="container my-5">
-        <h1>Register a New Student</h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../dashboard.php">Dashboard</a></li>

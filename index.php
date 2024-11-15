@@ -16,8 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error_message = "Invalid email format.";
     } else {
         // Hardcoded credentials for demonstration
-        $validEmail = "jade_cordero@email.com";
-        $validPassword = "1234";
+        $validEmail = "user1@email.com";
+        $validPassword = "password";
 
         if ($email === $validEmail && $password === $validPassword) {
             $_SESSION['logged_in'] = true;
